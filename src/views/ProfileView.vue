@@ -8,9 +8,9 @@
     },
 
     computed: {
-      ...mapState([
-        'username',
-      ]),
+      ...mapState({
+        username: (state) => state.profile.username
+      }),
     },
 
     methods: {
