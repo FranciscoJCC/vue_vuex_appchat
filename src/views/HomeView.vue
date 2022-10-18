@@ -5,6 +5,7 @@ import ProfileCard from '@/components/ProfileCard.vue'
 import ChatItem from '@/components/ChatItem.vue'
 //Variable reactiva
 //import store from '@/store/store.js'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -34,6 +35,19 @@ export default {
     }
   },
 
+  computed: {
+    foo() {
+      return "foo";
+    },
+    ...mapState(
+      ['username']
+    ),
+    ...mapGetters([
+      'firstName',
+      'reverseName'
+    ])
+  }
+
 }
 </script>
 
@@ -43,7 +57,7 @@ export default {
     <InputSearch v-model="search" />
     <ProfileCard
       :avatar="profile.avatar"
-      :username="$store.state.username"
+      :username="reverseName('-')"
       :status="profile.status"
     />
     <RouterLink to="/" class="channels-title">Canales <Icon icon="carbon:hashtag" /></RouterLink>

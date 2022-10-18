@@ -3,7 +3,7 @@
 import { reactive } from 'vue'
 
 const store = reactive({
-    username : 'FranciscoJCC',
+    username : 'FranciscoJCC1',
 
     updateUsername(username){
         this.username = username;
