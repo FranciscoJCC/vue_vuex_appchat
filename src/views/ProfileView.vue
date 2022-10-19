@@ -17,7 +17,7 @@
       /* ...mapMutations([
         'updateUsername'
       ]) */
-      ...mapActions([
+      ...mapActions('profile',[
         'updateUsername'
       ])
     }

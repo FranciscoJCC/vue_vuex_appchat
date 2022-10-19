@@ -21,7 +21,6 @@ export default {
       search: '',
       profile: {
         username: 'Diana Nerd',
-        status: 'active',
         avatar: '/avatars/avatar.jpg'
       },
       channels: [
@@ -40,12 +39,20 @@ export default {
       return "foo";
     },
     ...mapState(
-      ['username']
+      ['status']
     ),
-    ...mapGetters([
-      'firstName',
-      'reverseName'
-    ])
+    ...mapGetters('profile',
+      [
+        'firstName',
+        'reverseName'
+      ]
+    ),
+    //Si se requiere agregar otro modulo
+    /* ...mapGetters('profile2',
+      [
+        'firstName',
+      ]
+    ) */
   }
 
 }
@@ -58,7 +65,7 @@ export default {
     <ProfileCard
       :avatar="profile.avatar"
       :username="reverseName('-')"
-      :status="profile.status"
+      :status="status"
     />
     <RouterLink to="/" class="channels-title">Canales <Icon icon="carbon:hashtag" /></RouterLink>
     <div class="channels">
