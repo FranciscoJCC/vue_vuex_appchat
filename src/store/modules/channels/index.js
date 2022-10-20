@@ -4,6 +4,7 @@ const module = {
 
     state(){
         return {
+            channel : null,
             channels: [
                 { id: 1, name: 'Random', messages: 1 },
                 { id: 2, name: 'Emergencias', messages: null },
@@ -18,8 +19,24 @@ const module = {
     getters: {
         //Retorna todos los channels
         //Primer parametro recibe el state, segundo parametro recibe datos de la vista
-        getChannels: (state) => (search) => {
-            return state.channels.filter((channel) => channel.name.toLowerCase().includes(search.toLowerCase()))
+        getChannels: (state, getters, rootState, rootGetters) => (search) => {
+            return state.channels
+                .filter(
+                    (channel) => channel.name.toLowerCase()
+                    .includes(search.toLowerCase())
+                ).map((channel) => {
+                    const messages = rootGetters['messages/getUnreadMessages'](channel.id);
+                    return {
+                        ...channel,
+                        messages
+                    }
+                })
+        }
+    },
+
+    mutations: {
+        setChannel: () => {
+            
         }
     }
 }
