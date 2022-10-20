@@ -35,13 +35,16 @@ const module = {
         async updateUsername({ commit, state, rootState }, username) {
             //CODIGO PARA ACTUALIZAR VALORES EN EL BACKEND
             const user = await getUser(1);
+            
+            //Actualizamos el nombre del usuario
+            commit(COMMIT_UPDATE_USERNAME, user.username)
 
             //Validamos si existe un usuario
             //Si fuera necesario llamar un modulo se antepone el nombre, por ejemplo: profile/setStatus
             if(state.username) commit(COMMIT_SET_STATUS,'active', { root: true }) 
 
 
-            commit(COMMIT_UPDATE_USERNAME, user.username)
+            
         }
     },
 }
