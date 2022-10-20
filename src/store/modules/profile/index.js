@@ -8,7 +8,13 @@ const module = {
 
     state() {
         return {
-            username: ''
+            id: 1,
+            username: '',
+            details: {
+                id: 1,
+                name: 'Francisco Cervantes',
+                avatar: '/avatars/avatar.jpg'
+            }
         }
     },
     //Es similar a las variables computadas, pero no pertenecen a ningun component, si no, a un estado. (Son reactivos)
