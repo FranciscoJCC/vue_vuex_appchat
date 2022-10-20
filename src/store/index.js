@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import profile from '@/store/modules/profile'
 import channels from '@/store/modules/channels'
+import messages from '@/store/modules/messages'
 import { COMMIT_SET_STATUS } from '@/common/muations-types.js'
 
 
@@ -22,6 +23,7 @@ const store = createStore({
   modules: {
     profile,
     channels,
+    messages,
   }
 })
 

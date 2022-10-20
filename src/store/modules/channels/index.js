@@ -5,12 +5,12 @@ const module = {
     state(){
         return {
             channels: [
-                { id: 1, name: 'Random', messages: [] },
-                { id: 2, name: 'Emergencias', messages: [] },
-                { id: 3, name: 'Anuncios', messages: [1] },
-                { id: 4, name: 'Proyecto 1', messages: [] },
-                { id: 5, name: 'SCRUM', messages: [] },
-                { id: 6, name: 'Atención a clientes', messages: [] }
+                { id: 1, name: 'Random', messages: 1 },
+                { id: 2, name: 'Emergencias', messages: null },
+                { id: 3, name: 'Anuncios', messages: 1 },
+                { id: 4, name: 'Proyecto 1', messages: null },
+                { id: 5, name: 'SCRUM', messages: null },
+                { id: 6, name: 'Atención a clientes', messages: null }
             ],
         }
     },
